@@ -1,0 +1,58 @@
+<div class="col-md-4 offset-md-2">
+  <div class="card">
+    <div class="card-body">
+      <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+        Cadastro dos Alelos
+      </div>
+      <div class="div">
+       <form [formGroup]="caract2Form"   >
+        <div class="form-group">
+          <label for="selectCaract2">Característica da Planta</label>
+          <select class="form-control" formControlName="nome_caract" autofocus>
+            <option value="Forma da semente">Forma da semente</option>
+            <option value="Cor da semente">Cor da semente</option>
+            <option value="Cor da flor">Cor da flor</option>
+            <option value="Forma da vagem">Forma da vagem</option>
+            <option value="Cor da vagem">Cor da vagem</option>
+            <option value="Posicao da flor">Posicao da flor</option>
+            <option value="Comprimento do caule">Comprimento do caule</option>
+          </select>
+        </div>
+          <!--<div class="form-group" >
+            <input  type="text"  formControlName="nome_caract" placeholder="Nome da caracteristica" class="form-control" autofocus>
+          </div>-->
+          <div class="form-group" class="col-md-14" >
+            <label for="alelo" class="control-label">Alelo 1</label>
+            <div class="div"></div>
+            <select class="form-control" formControlName="id_alelos_1_1"  >
+             <option *ngFor="let path1 of alelos1 | async" [value]="path1.id_ale1">{{ path1.nome_ale1}} '{{path1.valor_ale1}}'  </option>
+             </select>
+          </div>
+          <div class="form-group"  class="col-md-14" >
+            <label for="alelo" class="control-label">Alelo 2</label>
+            <select class="form-control" autofocus formControlName="id_alelos_1_2">
+             <option *ngFor="let path2 of alelos1 | async" [value]="path2.id_ale1">{{ path2.nome_ale1}} '{{path2.valor_ale1}}'  </option>
+             </select>
+          </div>
+          <div class="form-group" class="col-md-14" >
+            <label for="gene" class="control-label">Genótipo 1</label>
+            <select class="form-control"  formControlName="id_genotipo_1_1" >
+              <option [value]="0" >Não aplicavél{{caract2.id_alelos_1_1}}</option>
+              <option *ngFor="let path1 of alelos1 | async" [value]="path1.id_ale1">{{ path1.nome_ale1}} '{{path1.valor_ale1}}'  </option>
+             </select>
+          </div>
+          <div class="form-group" class="col-md-14" >
+            <label for="gene" class="control-label">Genótipo 2</label>
+            <select class="form-control"  formControlName="id_genotipo_1_2" >
+              <option [value]="0" >Não aplicavél</option>
+              <option *ngFor="let path2 of alelos1 | async" [value]="path2.id_ale1">{{ path2.nome_ale1}} '{{path2.valor_ale1}}'  </option>
+            </select>
+          </div>
+          <button class="btn btn-success btn-block" (click)=" saveCaract2() " [disabled]="caract2Form.invalid">
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+ </div>

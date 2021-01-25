@@ -1,0 +1,78 @@
+<div class="col-md-6" class="class" *ngFor="let planta of plantas ">
+  <div >
+    <div class="card text-center">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+          Nome da Planta: {{planta.nome_planta}}
+          <button class="btn btn-danger" (click)="deletePlanta(planta.id_planta)">
+            <i class="far fa-trash-alt"></i> deletar
+          </button>
+        </div>
+          <div class="card-body">
+            <table borde="3" color="black">
+              <tr>
+                <td>caracteristica</td>
+                <td>Alelo 1</td>
+                <td>Alelo 2</td>
+                <td>Genótipo 1</td>
+                <td>Genótipo 2</td>
+              </tr>
+              <tr>
+                <td>1-{{planta.caracteristica_1_1_1_nome}}</td>
+                <td>{{planta.alelo_1_1_1_nome}} '{{planta.alelo_1_1_1_valor}}'</td>
+                <td>{{planta.alelo_1_1_1_nome_2}} '{{planta.alelo_1_1_1_valor2}}'</td>
+                <td>{{planta.gene_1_1_1_nome }} '{{planta.gene_1_1_1_valor}}'</td>
+                <td>{{planta.gene_1_1_1_nome_2 }}  '{{planta.gene_1_1_1_valor2}}</td>
+              </tr>
+              <tr>
+                <td>2-{{planta.caracteristica_1_1_2_nome}}</td>
+                <td>{{planta.alelo_1_1_2_nome}} '{{planta.alelo_1_1_2_valor}}'</td>
+                <td>{{planta.alelo_1_1_2_nome_2}}'{{planta.alelo_1_1_2_valor2}}'</td>
+                <td>{{planta.gene_1_1_2_nome }}'{{planta.gene_1_1_2_valor}}'</td>
+                <td>{{planta.gene_1_1_2_nome_2 }}'{{planta.gene_1_1_2_valor2}}'</td>
+              </tr>
+              <tr>
+                <td>3-{{planta.caracteristica_1_1_3_nome}}</td>
+                <td>{{planta.alelo_1_1_3_nome}}'{{planta.alelo_1_1_3_valor}}'</td>
+                <td>{{planta.alelo_1_1_3_nome_2}}'{{planta.alelo_1_1_3_valor2}}'</td>
+                <td>{{planta.gene_1_1_3_nome }}'{{planta.gene_1_1_3_valor}}'</td>
+                <td>{{planta.gene_1_1_3_nome_2 }}'{{planta.gene_1_1_3_valor2}}'</td>
+              </tr>
+              <tr>
+                <td>4-{{planta.caracteristica_1_1_4_nome}}</td>
+                <td>{{planta.alelo_1_1_4_nome}}'{{planta.alelo_1_1_4_valor}}'</td>
+                <td>{{planta.alelo_1_1_4_nome_2}}'{{planta.alelo_1_1_4_valor2}}'</td>
+                <td>{{planta.gene_1_1_4_nome }}'{{planta.gene_1_1_4_valor}}'</td>
+                <td>{{planta.gene_1_1_4_nome_2 }}'{{planta.gene_1_1_4_valor2}}'</td>
+              </tr>
+              <tr>
+                <td>5-{{planta.caracteristica_1_1_5_nome}}</td>
+                <td>{{planta.alelo_1_1_5_nome}}'{{planta.alelo_1_1_5_valor}}'</td>
+                <td>{{planta.alelo_1_1_5_nome_2}}'{{planta.alelo_1_1_5_valor2}}'</td>
+                <td>{{planta.gene_1_1_5_nome }}'{{planta.gene_1_1_5_valor}}'</td>
+                <td>{{planta.gene_1_1_5_nome_2 }}'{{planta.gene_1_1_5_valor2}}'</td>
+              </tr>
+              <tr>
+                <td>6-{{planta.caracteristica_1_1_6_nome}}</td>
+                <td>{{planta.alelo_1_1_6_nome}}'{{planta.alelo_1_1_6_valor}}'</td>
+                <td>{{planta.alelo_1_1_6_nome_2}}'{{planta.alelo_1_1_6_valor2}}'</td>
+                <td>{{planta.gene_1_1_6_nome }}'{{planta.gene_1_1_6_valor}}'</td>
+                <td>{{planta.gene_1_1_6_nome_2 }}'{{planta.gene_1_1_6_valor2}}'</td>
+              </tr>
+              <tr>
+                <td>7-{{planta.caracteristica_1_1_7_nome}}</td>
+                <td>{{planta.alelo_1_1_7_nome}}'{{planta.alelo_1_1_7_valor}}'</td>
+                <td>{{planta.alelo_1_1_7_nome_2}}'{{planta.alelo_1_1_7_valor2}}'</td>
+                <td>{{planta.gene_1_1_7_nome }}'{{planta.gene_1_1_7_valor}}'</td>
+                <td>{{planta.gene_1_1_7_nome_2 }}'{{planta.gene_1_1_7_valor2}}'</td>
+              </tr>
+
+            </table>
+            <p>Data da Criação: {{planta.created_at | date: 'dd-MM-yyyy'}}</p>
+            </div>
+            <a [routerLink]="['/plantas/edit', planta.id_planta]" class="btn btn-info btn-block">
+              EDIT PLANTA
+            </a>
+          </div>
+
+        </div>
+    </div>

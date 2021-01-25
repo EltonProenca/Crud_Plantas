@@ -1,0 +1,22 @@
+<div class="col-md-4 offset-md-2">
+  <div class="card">
+    <div class="card-body">
+      <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+        Cadastro dos Alelos
+      </div>
+      <form action="">
+        <div class="form-group">
+          <input type="text" name="Nome_ale1" [(ngModel)]="alelo1.nome_ale1" placeholder="Nome do alelo 1" class="form-control" autofocus>
+        </div>
+        <div class="form-group">
+          <input type="text" name="valor_ale1" [(ngModel)]="alelo1.valor_ale1"   placeholder="valor do alelo 1" class="form-control" autofocus>
+         </div>
+
+        <button class="btn btn-success btn-block" (click)=" saveAlelo1()" >
+          Save
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+

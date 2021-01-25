@@ -1,0 +1,356 @@
+<div class="col-md-8 offset-md-2">
+  <div class="card">
+    <div class="card-body">
+      <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+        Cadastrar Plantas
+      </div>
+        <div class="row">
+            <form [formGroup]="plantasForm" >
+              <div class="form-group">
+                <input type="text" formControlName="nome_planta" placeholder="Nome da Planta" class="form-control" autofocus>
+              </div>
+
+               <!-- CARACTERISTICA 1 -->
+              <div class="row">
+              <div class="col">
+                <div class="form-group" >
+                  <label for="selectCaract2">Característica da Planta</label>
+                  <select class="form-control" formControlName="id_caracteristica_1_1" autofocus ChangeModel="paisSelecionado1.id_caract1" (change)="onSelect1($event.target.value)" >
+                    <option value="0">--Selecione--</option>
+                    <option *ngFor="let path1 of caract2| async" [value]="path1.id_caract1">{{ path1.nome_caract}}</option>
+                   </select>
+                </div>
+              </div>
+              <div class="col">
+                <fieldset >
+                  <div class="form-group">
+                    <label for="typeInput">Alelo 1</label>
+                    <select class="form-control" formControlName="id_ale1_1">
+                      <option *ngFor="let path1 of aleloscaract1 | async" [value]="path1.id_alelos_1_1" >{{ path1.alelo_1_1_nome}} '{{path1.alelo_1_1_valor}}'   </option>
+                      </select>
+                   </div>
+            </fieldset>
+              </div>
+              <div class="col">
+                <fieldset >
+                  <div class="form-group">
+                    <label for="typeInput">Alelo 2</label>
+                    <select class="form-control" formControlName="id_ale2_1">
+                    <option *ngFor="let path1 of aleloscaract1 | async" [value]="path1.id_alelos_1_2" >{{ path1.alelo_1_1_nome_2}} '{{path1.alelo_1_1_valor2}}'  </option>
+                </select>
+                  </div>
+               </fieldset>
+              </div>
+              <div class="col">
+                <label for="typeInput">Genótipo 2</label>
+                <select class="form-control" formControlName="id_gene1_1">
+                  <option value="0">--Selecione--</option>
+                  <option *ngFor="let path1 of aleloscaract1 | async" [value]="path1.id_genotipo_1_1" >{{ path1.alelo_1_1_nome}} '{{path1.alelo_1_1_valor}}'   </option>
+                  <option *ngFor="let path1 of aleloscaract1 | async" [value]="path1.id_genotipo_1_2" >{{ path1.alelo_1_1_nome_2}} '{{path1.alelo_1_1_valor2}}'  </option>
+                </select>
+              </div>
+              <div class="col">
+                <label for="typeInput">Genótipo 1</label>
+                <select class="form-control" formControlName="id_gene2_1">
+                  <option value="0">--Selecione--</option>
+                  <option *ngFor="let path1 of aleloscaract1 | async" [value]="path1.id_genotipo_1_1" >{{ path1.alelo_1_1_nome}} '{{path1.alelo_1_1_valor}}'   </option>
+                  <option *ngFor="let path1 of aleloscaract1 | async" [value]="path1.id_genotipo_1_2" >{{ path1.alelo_1_1_nome_2}} '{{path1.alelo_1_1_valor2}}'  </option>
+                </select>
+              </div>
+              <br>
+            </div>
+            </form>
+
+            <!-- CARACTERISTICA  2 -->
+            <form [formGroup]="plantasForm" >
+            <div class="row">
+              <div class="col">
+                <div class="form-group" >
+                  <select class="form-control" formControlName="id_caracteristica_1_2" autofocus ChangeModel="paisSelecionado2.id_caract1" (change)="onSelect2($event.target.value)" >
+                    <option value="0">--Selecione--</option>
+                    <option *ngFor="let path1 of caract2| async" [value]="path1.id_caract1">{{ path1.nome_caract}}</option>
+                   </select>
+                </div>
+              </div>
+              <div class="col">
+                <fieldset >
+                  <div class="form-group">
+                    <select class="form-control" formControlName="id_ale1_2">
+                      <option *ngFor="let path1 of aleloscaract2 | async" [value]="path1.id_alelos_1_1" >{{ path1.alelo_1_1_nome}} '{{path1.alelo_1_1_valor}}'   </option>
+                      </select>
+                   </div>
+            </fieldset>
+              </div>
+              <div class="col">
+                <fieldset >
+                  <div class="form-group">
+                    <select class="form-control" formControlName="id_ale2_2">
+                    <option *ngFor="let path1 of aleloscaract2 | async" [value]="path1.id_alelos_1_2" >{{ path1.alelo_1_1_nome_2}} '{{path1.alelo_1_1_valor2}}'  </option>
+                </select>
+                  </div>
+               </fieldset>
+              </div>
+              <div class="col">
+                <select class="form-control" formControlName="id_gene1_2">
+                  <option value="0">--Selecione--</option>
+                  <option *ngFor="let path1 of aleloscaract2 | async" [value]="path1.id_genotipo_1_1" >{{ path1.alelo_1_1_nome}} '{{path1.alelo_1_1_valor}}'   </option>
+                  <option *ngFor="let path1 of aleloscaract2 | async" [value]="path1.id_genotipo_1_2" >{{ path1.alelo_1_1_nome_2}} '{{path1.alelo_1_1_valor2}}'  </option>
+                </select>
+              </div>
+              <div class="col">
+                <select class="form-control" formControlName="id_gene2_2">
+                  <option value="0">--Selecione--</option>
+                  <option *ngFor="let path1 of aleloscaract2 | async" [value]="path1.id_genotipo_1_1" >{{ path1.alelo_1_1_nome}} '{{path1.alelo_1_1_valor}}'   </option>
+                  <option *ngFor="let path1 of aleloscaract2 | async" [value]="path1.id_genotipo_1_2" >{{ path1.alelo_1_1_nome_2}} '{{path1.alelo_1_1_valor2}}'  </option>
+                </select>
+              </div>
+              <br>
+            </div>
+          </form>
+           <!-- CARACTERISTICA  3 -->
+
+          <form [formGroup]="plantasForm" >
+            <div class="row">
+              <div class="col">
+                <div class="form-group" >
+                  <select class="form-control" formControlName="id_caracteristica_1_3" autofocus ChangeModel="paisSelecionado3.id_caract1" (change)="onSelect3($event.target.value)" >
+                    <option value="0">--Selecione--</option>
+                    <option *ngFor="let path1 of caract2| async" [value]="path1.id_caract1">{{ path1.nome_caract}}</option>
+                   </select>
+                </div>
+              </div>
+              <div class="col">
+                <fieldset >
+                  <div class="form-group">
+                    <select class="form-control" formControlName="id_ale1_3">
+                      <option *ngFor="let path1 of aleloscaract3 | async" [value]="path1.id_alelos_1_1" >{{ path1.alelo_1_1_nome}} '{{path1.alelo_1_1_valor}}'   </option>
+                      </select>
+                   </div>
+            </fieldset>
+              </div>
+              <div class="col">
+                <fieldset >
+                  <div class="form-group">
+                    <select class="form-control" formControlName="id_ale2_3">
+                    <option *ngFor="let path1 of aleloscaract3 | async" [value]="path1.id_alelos_1_2" >{{ path1.alelo_1_1_nome_2}} '{{path1.alelo_1_1_valor2}}'  </option>
+                </select>
+                  </div>
+               </fieldset>
+              </div>
+              <div class="col">
+                <select class="form-control" formControlName="id_gene1_3">
+                  <option value="0">--Selecione--</option>
+                  <option *ngFor="let path1 of aleloscaract3 | async" [value]="path1.id_genotipo_1_1" >{{ path1.alelo_1_1_nome}} '{{path1.alelo_1_1_valor}}'   </option>
+                  <option *ngFor="let path1 of aleloscaract3 | async" [value]="path1.id_genotipo_1_2" >{{ path1.alelo_1_1_nome_2}} '{{path1.alelo_1_1_valor2}}'  </option>
+                </select>
+              </div>
+              <div class="col">
+                <select class="form-control" formControlName="id_gene2_3">
+                  <option value="0">--Selecione--</option>
+                  <option *ngFor="let path1 of aleloscaract3 | async" [value]="path1.id_genotipo_1_1" >{{ path1.alelo_1_1_nome}} '{{path1.alelo_1_1_valor}}'   </option>
+                  <option *ngFor="let path1 of aleloscaract3 | async" [value]="path1.id_genotipo_1_2" >{{ path1.alelo_1_1_nome_2}} '{{path1.alelo_1_1_valor2}}'  </option>
+                </select>
+              </div>
+              <br>
+            </div>
+          </form>
+
+            <!-- CARACTERISTICA  4 -->
+
+            <form [formGroup]="plantasForm" >
+              <div class="row">
+                <div class="col">
+                  <div class="form-group" >
+                    <select class="form-control" formControlName="id_caracteristica_1_4" autofocus ChangeModel="paisSelecionado4.id_caract1" (change)="onSelect4($event.target.value)" >
+                      <option value="0">--Selecione--</option>
+                      <option *ngFor="let path1 of caract2| async" [value]="path1.id_caract1">{{ path1.nome_caract}}</option>
+                     </select>
+                  </div>
+                </div>
+                <div class="col">
+                  <fieldset >
+                    <div class="form-group">
+                      <select class="form-control" formControlName="id_ale1_4">
+                        <option *ngFor="let path1 of aleloscaract4 | async" [value]="path1.id_alelos_1_1" >{{ path1.alelo_1_1_nome}} '{{path1.alelo_1_1_valor}}'   </option>
+                        </select>
+                     </div>
+              </fieldset>
+                </div>
+                <div class="col">
+                  <fieldset >
+                    <div class="form-group">
+                      <select class="form-control" formControlName="id_ale2_4">
+                      <option *ngFor="let path1 of aleloscaract4 | async" [value]="path1.id_alelos_1_2" >{{ path1.alelo_1_1_nome_2}} '{{path1.alelo_1_1_valor2}}'  </option>
+                  </select>
+                    </div>
+                 </fieldset>
+                </div>
+                <div class="col">
+                  <select class="form-control" formControlName="id_gene1_4">
+                    <option value="0">--Selecione--</option>
+                    <option *ngFor="let path1 of aleloscaract4 | async" [value]="path1.id_genotipo_1_1" >{{ path1.alelo_1_1_nome}} '{{path1.alelo_1_1_valor}}'   </option>
+                    <option *ngFor="let path1 of aleloscaract4 | async" [value]="path1.id_genotipo_1_2" >{{ path1.alelo_1_1_nome_2}} '{{path1.alelo_1_1_valor2}}'  </option>
+                  </select>
+                </div>
+                <div class="col">
+                  <select class="form-control" formControlName="id_gene2_4">
+                    <option value="0">--Selecione--</option>
+                    <option *ngFor="let path1 of aleloscaract4 | async" [value]="path1.id_genotipo_1_1" >{{ path1.alelo_1_1_nome}} '{{path1.alelo_1_1_valor}}'   </option>
+                    <option *ngFor="let path1 of aleloscaract4 | async" [value]="path1.id_genotipo_1_2" >{{ path1.alelo_1_1_nome_2}} '{{path1.alelo_1_1_valor2}}'  </option>
+                  </select>
+                </div>
+                <br>
+              </div>
+            </form>
+
+            <!-- CARACTERISTICA  5 -->
+
+            <form [formGroup]="plantasForm" >
+              <div class="row">
+                <div class="col">
+                  <div class="form-group" >
+                    <select class="form-control" formControlName="id_caracteristica_1_5" autofocus ChangeModel="paisSelecionado5.id_caract1" (change)="onSelect5($event.target.value)" >
+                      <option value="0">--Selecione--</option>
+                      <option *ngFor="let path1 of caract2| async" [value]="path1.id_caract1">{{ path1.nome_caract}}</option>
+                     </select>
+                  </div>
+                </div>
+                <div class="col">
+                  <fieldset >
+                    <div class="form-group">
+                      <select class="form-control" formControlName="id_ale1_5">
+                        <option *ngFor="let path1 of aleloscaract5 | async" [value]="path1.id_alelos_1_1" >{{ path1.alelo_1_1_nome}} '{{path1.alelo_1_1_valor}}'   </option>
+                        </select>
+                     </div>
+              </fieldset>
+                </div>
+                <div class="col">
+                  <fieldset >
+                    <div class="form-group">
+                      <select class="form-control" formControlName="id_ale2_5">
+                      <option *ngFor="let path1 of aleloscaract5 | async" [value]="path1.id_alelos_1_2" >{{ path1.alelo_1_1_nome_2}} '{{path1.alelo_1_1_valor2}}'  </option>
+                  </select>
+                    </div>
+                 </fieldset>
+                </div>
+                <div class="col">
+                  <select class="form-control" formControlName="id_gene1_5">
+                    <option value="0">--Selecione--</option>
+                    <option *ngFor="let path1 of aleloscaract5 | async" [value]="path1.id_genotipo_1_1" >{{ path1.alelo_1_1_nome}} '{{path1.alelo_1_1_valor}}'   </option>
+                    <option *ngFor="let path1 of aleloscaract5 | async" [value]="path1.id_genotipo_1_2" >{{ path1.alelo_1_1_nome_2}} '{{path1.alelo_1_1_valor2}}'  </option>
+                  </select>
+                </div>
+                <div class="col">
+                  <select class="form-control" formControlName="id_gene2_5">
+                    <option value="0">--Selecione--</option>
+                    <option *ngFor="let path1 of aleloscaract5 | async" [value]="path1.id_genotipo_1_1" >{{ path1.alelo_1_1_nome}} '{{path1.alelo_1_1_valor}}'   </option>
+                    <option *ngFor="let path1 of aleloscaract5 | async" [value]="path1.id_genotipo_1_2" >{{ path1.alelo_1_1_nome_2}} '{{path1.alelo_1_1_valor2}}'  </option>
+                  </select>
+                </div>
+                <br>
+              </div>
+            </form>
+
+
+              <!-- CARACTERISTICA  6 -->
+
+          <form [formGroup]="plantasForm" >
+            <div class="row">
+              <div class="col">
+                <div class="form-group" >
+                  <select class="form-control" formControlName="id_caracteristica_1_6" autofocus ChangeModel="paisSelecionado6.id_caract1" (change)="onSelect6($event.target.value)" >
+                    <option value="0">--Selecione--</option>
+                    <option *ngFor="let path1 of caract2| async" [value]="path1.id_caract1">{{ path1.nome_caract}}</option>
+                   </select>
+                </div>
+              </div>
+              <div class="col">
+                <fieldset >
+                  <div class="form-group">
+                    <select class="form-control" formControlName="id_ale1_6">
+                      <option *ngFor="let path1 of aleloscaract6 | async" [value]="path1.id_alelos_1_1" >{{ path1.alelo_1_1_nome}} '{{path1.alelo_1_1_valor}}'   </option>
+                      </select>
+                   </div>
+            </fieldset>
+              </div>
+              <div class="col">
+                <fieldset >
+                  <div class="form-group">
+                    <select class="form-control" formControlName="id_ale2_6">
+                    <option *ngFor="let path1 of aleloscaract6 | async" [value]="path1.id_alelos_1_2" >{{ path1.alelo_1_1_nome_2}} '{{path1.alelo_1_1_valor2}}'  </option>
+                </select>
+                  </div>
+               </fieldset>
+              </div>
+              <div class="col">
+                <select class="form-control" formControlName="id_gene1_6">
+                  <option value="0">--Selecione--</option>
+                  <option *ngFor="let path1 of aleloscaract6 | async" [value]="path1.id_genotipo_1_1" >{{ path1.alelo_1_1_nome}} '{{path1.alelo_1_1_valor}}'   </option>
+                  <option *ngFor="let path1 of aleloscaract6 | async" [value]="path1.id_genotipo_1_2" >{{ path1.alelo_1_1_nome_2}} '{{path1.alelo_1_1_valor2}}'  </option>
+                </select>
+              </div>
+              <div class="col">
+                <select class="form-control" formControlName="id_gene2_6">
+                  <option value="0">--Selecione--</option>
+                  <option *ngFor="let path1 of aleloscaract6 | async" [value]="path1.id_genotipo_1_1" >{{ path1.alelo_1_1_nome}} '{{path1.alelo_1_1_valor}}'   </option>
+                  <option *ngFor="let path1 of aleloscaract6 | async" [value]="path1.id_genotipo_1_2" >{{ path1.alelo_1_1_nome_2}} '{{path1.alelo_1_1_valor2}}'  </option>
+                </select>
+              </div>
+              <br>
+            </div>
+          </form>
+
+            <!-- CARACTERISTICA  7 -->
+
+            <form [formGroup]="plantasForm" >
+              <div class="row">
+                <div class="col">
+                  <div class="form-group" >
+                    <select class="form-control" formControlName="id_caracteristica_1_7" autofocus ChangeModel="paisSelecionado7.id_caract1" (change)="onSelect7($event.target.value)" >
+                      <option value="0">--Selecione--</option>
+                      <option *ngFor="let path1 of caract2| async" [value]="path1.id_caract1">{{ path1.nome_caract}}</option>
+                     </select>
+                  </div>
+                </div>
+                <div class="col">
+                  <fieldset >
+                    <div class="form-group">
+                      <select class="form-control" formControlName="id_ale1_7">
+                        <option *ngFor="let path1 of aleloscaract7 | async" [value]="path1.id_alelos_1_1" >{{ path1.alelo_1_1_nome}} '{{path1.alelo_1_1_valor}}'   </option>
+                        </select>
+                     </div>
+              </fieldset>
+                </div>
+                <div class="col">
+                  <fieldset >
+                    <div class="form-group">
+                      <select class="form-control" formControlName="id_ale2_7">
+                      <option *ngFor="let path1 of aleloscaract7 | async" [value]="path1.id_alelos_1_2" >{{ path1.alelo_1_1_nome_2}} '{{path1.alelo_1_1_valor2}}'  </option>
+                  </select>
+                    </div>
+                 </fieldset>
+                </div>
+                <div class="col">
+                  <select class="form-control" formControlName="id_gene1_7">
+                    <option value="0">--Selecione--</option>
+                    <option *ngFor="let path1 of aleloscaract7 | async" [value]="path1.id_genotipo_1_1" >{{ path1.alelo_1_1_nome}} '{{path1.alelo_1_1_valor}}'   </option>
+                    <option *ngFor="let path1 of aleloscaract7 | async" [value]="path1.id_genotipo_1_2" >{{ path1.alelo_1_1_nome_2}} '{{path1.alelo_1_1_valor2}}'  </option>
+                  </select>
+                </div>
+                <div class="col">
+                  <select class="form-control" formControlName="id_gene2_7">
+                    <option value="0">--Selecione--</option>
+                    <option *ngFor="let path1 of aleloscaract7 | async" [value]="path1.id_genotipo_1_1" >{{ path1.alelo_1_1_nome}} '{{path1.alelo_1_1_valor}}'   </option>
+                    <option *ngFor="let path1 of aleloscaract7 | async" [value]="path1.id_genotipo_1_2" >{{ path1.alelo_1_1_nome_2}} '{{path1.alelo_1_1_valor2}}'  </option>
+                  </select>
+                </div>
+                <br>
+              </div>
+            </form>
+        </div>
+        <button class="btn btn-success btn-block" (click)="savePlanta()" [disabled]="plantasForm.invalid">
+          Save
+        </button>
+    </div>
+  </div>
+</div>
